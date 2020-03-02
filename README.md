@@ -18,6 +18,10 @@ npm i -D webpack webpack-cli
 npm i -D @babel/core @babel/preset-env @babel/preset-react
 npm i babel-loader
 npm i -D @babel/plugin-proposal-class-properties
+
+// 자동 실행
+npm i -D react-hot-loader
+npm i -D webpack-dev-server
 ```
 
 ### Webpack 설정 및 실행
@@ -32,6 +36,7 @@ npx webpack
 ```
 
 ### React에서 다른점
+
 
 - class -> className
 - for -> htmlFor

@@ -30,7 +30,7 @@ module.exports = {
             ],
             "@babel/preset-react"
           ],
-          plugins: ["@babel/plugin-proposal-class-properties"]
+          plugins: ["@babel/plugin-proposal-class-properties", "react-hot-loader/babel"]
         }
       }
     ]
@@ -38,6 +38,7 @@ module.exports = {
   plugins: [new webpack.LoaderOptionsPlugin({ debug: true })],
   output: {
     path: path.join(__dirname, "dist"), // __dirname: 현재폴더
-    filename: "app.js"
+    filename: "app.js",
+    publicPath: "/dist/"
   } // 출력
 };
