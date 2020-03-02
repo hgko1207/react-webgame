@@ -37,7 +37,6 @@ npx webpack
 
 ### React에서 다른점
 
-
 - class -> className
 - for -> htmlFor
 
