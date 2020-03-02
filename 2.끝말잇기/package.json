@@ -1,18 +1,23 @@
 {
-  "name": "WordRelay",
+  "name": "lecture",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack"
   },
   "author": "hgko",
   "license": "MIT",
   "dependencies": {
+    "babel-loader": "^8.0.6",
     "react": "^16.13.0",
     "react-dom": "^16.13.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.8.6",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.8.6",
+    "@babel/preset-react": "^7.8.3",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11"
   }

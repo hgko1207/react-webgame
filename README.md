@@ -15,6 +15,20 @@
 npm init
 npm i react react-dom
 npm i -D webpack webpack-cli
+npm i -D @babel/core @babel/preset-env @babel/preset-react
+npm i babel-loader
+npm i -D @babel/plugin-proposal-class-properties
+```
+
+### Webpack 설정 및 실행
+
+- Browsers 설정 : https://github.com/browserslist/browserslist#queries
+
+```
+// package.json -> "dev": "webpack" 수정
+npm run dev
+
+npx webpack
 ```
 
 ### React에서 다른점
