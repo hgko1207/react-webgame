@@ -13,7 +13,6 @@ function getNumbers() {
 }
 
 const NumberBaseball = memo(() => {
-  const [state, setState] = useState("");
   const [result, setResult] = useState("");
   const [value, setValue] = useState("");
   const [answer, setAnswer] = useState(getNumbers());
