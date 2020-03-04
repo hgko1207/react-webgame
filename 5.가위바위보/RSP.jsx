@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, memo } from "react";
 
 // 클래스의 경우 -> constructor -> render -> ref -> componentDidMount
 // -> (setState/props 바뀔때 -> shouldComponentUpdate -> render -> componentDidUpdate)
@@ -22,7 +22,7 @@ const computerChoice = imgCoord => {
   })[0];
 };
 
-const RSP = () => {
+const RSP = memo(() => {
   const [result, setResult] = useState("");
   const [imgCoord, setImgCoord] = useState(rspCoords.바위);
   const [score, setScore] = useState(0);
@@ -36,6 +36,7 @@ const RSP = () => {
       clearInterval(interval.current);
     };
   }, [imgCoord]);
+  // 배열에는 꼭 useEffect를 다시 실행할 값만 넣어주기
 
   const onClickBtn = choice => () => {
     clearInterval(interval.current);
@@ -89,6 +90,6 @@ const RSP = () => {
       <div>현재 {score}점</div>
     </>
   );
-};
+});
 
 export default RSP;

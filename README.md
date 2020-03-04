@@ -2,12 +2,13 @@
 
 ### React 기술
 
+- JSX
 - Hooks
-
-### Javascript
-
-- Babel
-- Webpack
+  - useState
+  - useRef
+  - useEffect
+  - useLayoutEffect
+- PureComponent, memo
 
 ### React 설치
 
@@ -23,6 +24,19 @@ npm i -D @babel/plugin-proposal-class-properties
 npm i -D react-hot-loader
 npm i -D webpack-dev-server
 ```
+
+### ES6
+
+- Class
+- import
+- map
+- filter
+- reduce
+
+### 사용 기술
+
+- Babel
+- Webpack
 
 ### Webpack 설정 및 실행
 
@@ -43,3 +57,4 @@ npx webpack
 ### 알아두면 좋은 것
 
 - Node는 자바스크립트 실행기이다. (백엔드, 서버가 아님)
+- Node에서는 require 사용
