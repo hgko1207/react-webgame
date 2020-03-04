@@ -5,9 +5,11 @@
 - JSX
 - Hooks
   - useState
-  - useRef
+  - useRef : 일반 값을 기억
   - useEffect
   - useLayoutEffect
+  - useMemo : 복잡한 함수 결과 값을 기억(함수의 리턴 값을 기억)
+  - useCallback : 함수 자체를 기억, 자식 컴포넌트에 함수를 전달 시 무조건 사용
 - PureComponent, memo
 
 ### React 설치
@@ -58,3 +60,4 @@ npx webpack
 
 - Node는 자바스크립트 실행기이다. (백엔드, 서버가 아님)
 - Node에서는 require 사용
+- Hooks는 함수 컴포넌트가 전체로 재실행되는 현상이 있다.
