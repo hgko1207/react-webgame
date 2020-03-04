@@ -10,6 +10,7 @@
   - useLayoutEffect
   - useMemo : 복잡한 함수 결과 값을 기억(함수의 리턴 값을 기억)
   - useCallback : 함수 자체를 기억, 자식 컴포넌트에 함수를 전달 시 무조건 사용
+  - useReducer
 - PureComponent, memo
 
 ### React 설치
