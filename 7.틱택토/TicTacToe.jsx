@@ -27,8 +27,8 @@ const reducer = (state, action) => {
       };
     case CLICK_CELL:
       const tableData = [...state.tableData];
-      // tableData[action.row] = [...tableData[action.row]]; // immer라는 라이브러리로 가독성 해결
-      // console.log(tableData[action.row]);
+      tableData[action.row] = [...tableData[action.row]]; // immer라는 라이브러리로 가독성 해결
+      console.log(tableData[action.row]);
       tableData[action.row][action.cell] = state.turn;
       return {
         ...state,
@@ -58,7 +58,7 @@ const reducer = (state, action) => {
 
 const TicTacToe = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const { tableData, turn, recentCell } = state;
+  const { tableData, turn, winner, recentCell } = state;
   //   const [winner, setWinner] = useState("");
   //   const [turn, setTurn] = useState("O");
   //   const [tableData, setTableData] = useState([
@@ -66,10 +66,6 @@ const TicTacToe = () => {
   //     ["", "", ""],
   //     ["", "", ""]
   //   ]);
-
-  const onClickTable = useCallback(() => {
-    dispatch({ type: SET_WINNER, winner: "O" });
-  }, []);
 
   useEffect(() => {
     const [row, cell] = recentCell;
@@ -91,7 +87,7 @@ const TicTacToe = () => {
     }
     if (win) {
       // 승리시
-      dispatch({ type: SET_WINNER, winner: true });
+      dispatch({ type: SET_WINNER, winner: turn });
       dispatch({ type: RESET_GAME });
     } else {
       let all = true; // all이 true면 무승부라는 뜻
@@ -113,8 +109,8 @@ const TicTacToe = () => {
 
   return (
     <>
-      <Table onClick={onClickTable} tableData={state.tableData} dispatch={dispatch} />
-      {state.winner && <div>{state.turn}님의 승리</div>}
+      <Table tableData={tableData} dispatch={dispatch} />
+      {winner && <div>{winner}님의 승리</div>}
     </>
   );
 };

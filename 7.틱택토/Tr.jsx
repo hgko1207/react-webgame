@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import Td from "./Td";
 
-const Tr = ({ rowData, rowIndex, dispatch }) => {
+const Tr = memo(({ rowData, rowIndex, dispatch }) => {
   return (
     <tr>
       {/* {Array.from({ length: rowData.length }, td => (
@@ -10,12 +10,16 @@ const Tr = ({ rowData, rowIndex, dispatch }) => {
       {Array(rowData.length)
         .fill()
         .map((td, i) => (
-          <Td rowIndex={rowIndex} cellIndex={i} cellData={rowData[i]} dispatch={dispatch}>
-            {""}
-          </Td>
+          <Td
+            key={i}saaaaa
+            rowIndex={rowIndex}
+            cellIndex={i}
+            cellData={rowData[i]}
+            dispatch={dispatch}
+          ></Td>
         ))}
     </tr>
   );
-};
+});
 
 export default Tr;
