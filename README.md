@@ -6,13 +6,15 @@
 - Hooks
   - useState
   - useRef : 일반 값을 기억
-  - useEffect
+  - useEffect : componentDidMount, componentDidUpdate, componentWillUnmount
   - useLayoutEffect
   - useMemo : 복잡한 함수 결과 값을 기억(함수의 리턴 값을 기억)
-  - useCallback : 함수 자체를 기억, 자식 컴포넌트에 함수를 전달 시 무조건 사용
-  - useReducer
+  - useCallback : 함수 자체를 기억, 자식 컴포넌트에 함수를 전달 시 무조건 사용, 이벤트 함수에 거의 사용
+  - useReducer : reducer를 편리하게 사용하기 위해
+  - useMemo
 - PureComponent : Class Component 일 때 사용
 - memo : Function 일 때 사용
+- createContext
 
 ### React 설치
 
