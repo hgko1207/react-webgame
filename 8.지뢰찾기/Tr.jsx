@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
-import { TableContext } from "./MineSearch";
+import React from "react";
+import { useTableContext } from "./MineSearch";
 import Td from "./Td";
 
 const Tr = ({ rowIndex }) => {
-  const { tableData } = useContext(TableContext);
+  const { tableData } = useTableContext();
   return (
     <tr>
       {tableData[0] &&

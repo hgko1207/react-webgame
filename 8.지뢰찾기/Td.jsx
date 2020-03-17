@@ -1,12 +1,12 @@
-import React, { useContext, useCallback } from "react";
+import React, { useCallback } from "react";
 import {
-  TableContext,
   CODE,
   OPEN_CELL,
   CLICK_MINE,
   FLAG_CELL,
   QUESTION_CELL,
-  NORMALIZE_CELL
+  NORMALIZE_CELL,
+  useTableContext
 } from "./MineSearch";
 
 const getTdStyle = code => {
@@ -53,14 +53,12 @@ const getTdText = code => {
     case CODE.QUESTION:
       return "?";
     default:
-      return "";
+      return code || "";
   }
 };
 
 const Td = ({ rowIndex, cellIndex }) => {
-  const { tableData, dispatch, halted } = useContext(TableContext);
-
-  console.log(halted);
+  const { tableData, dispatch, halted } = useTableContext();
 
   const onClickId = useCallback(() => {
     if (halted) {

@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 import Tr from "./Tr";
-import { TableContext } from "./MineSearch";
+import { useTableContext } from "./MineSearch";
 
 const Table = () => {
-  const { tableData } = useContext(TableContext);
+  const { tableData } = useTableContext();
   return (
     <table>
       <tbody>

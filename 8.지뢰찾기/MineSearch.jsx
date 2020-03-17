@@ -1,4 +1,4 @@
-import React, { useReducer, createContext, useMemo } from "react";
+import React, { useReducer, createContext, useMemo, useContext } from "react";
 import Table from "./Table";
 import Form from "./Form";
 
@@ -13,11 +13,13 @@ export const CODE = {
   OPENED: 0 // 0 이상이면 다 opened
 };
 
-export const TableContext = createContext({
+const TableContext = createContext({
   tableData: [],
   halted: false,
   dispatch: () => {}
 });
+
+export const useTableContext = () => useContext(TableContext);
 
 const initialState = {
   tableData: [],
@@ -73,7 +75,28 @@ const reducer = (state, action) => {
     case OPEN_CELL: {
       const tableData = [...state.tableData];
       tableData[action.row] = [...state.tableData[action.row]];
-      tableData[action.row][action.cell] = CODE.OPENED;
+      let around = [];
+      if (tableData[action.row - 1]) {
+        around = around.concat(
+          tableData[action.row - 1][action.cell - 1],
+          tableData[action.row - 1][action.cell],
+          tableData[action.row - 1][action.cell + 1]
+        );
+      }
+      around = around.concat(
+        tableData[action.row][action.cell - 1],
+        tableData[action.row][action.cell + 1]
+      );
+      if (tableData[action.row + 1]) {
+        around = around.concat(
+          tableData[action.row + 1][action.cell - 1],
+          tableData[action.row + 1][action.cell],
+          tableData[action.row + 1][action.cell + 1]
+        );
+      }
+      const count = around.filter(v => [CODE.MINE, CODE.FLAG_MINE, CODE.QUESTION_MINE].includes(v))
+        .length;
+      tableData[action.row][action.cell] = count;
       return {
         ...state,
         tableData
@@ -138,7 +161,6 @@ const MineSearch = () => {
   const { tableData, halted, timer, result } = state;
 
   const value = useMemo(() => {
-    console.log("halted", halted);
     return {
       tableData,
       halted,
