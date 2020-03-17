@@ -12,7 +12,7 @@
   - useCallback : 함수 자체를 기억, 자식 컴포넌트에 함수를 전달 시 무조건 사용, 이벤트 함수에 거의 사용
   - useReducer : reducer를 편리하게 사용하기 위해
   - useMemo : 함수형 컴포넌트 내부에서 발생하는 연산을 최적화 할 수 있음.
-  - useContext
+  - useContext : context 사용하기 위해
 - PureComponent : Class Component 일 때 사용
 - memo : Function 일 때 사용
 - createContext
