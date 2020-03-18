@@ -30,6 +30,10 @@ npm i -D @babel/plugin-proposal-class-properties
 // 자동 실행
 npm i -D react-hot-loader
 npm i -D webpack-dev-server
+
+// React Router
+npm i react-router
+npm i react-router-dom
 ```
 
 ### ES6
@@ -39,6 +43,11 @@ npm i -D webpack-dev-server
 - map
 - filter
 - reduce
+
+### React Router
+
+- Link
+- Browser
 
 ### 사용 기술
 
@@ -56,7 +65,7 @@ npm run dev
 npx webpack
 ```
 
-### React에서 다른점
+### Html과 React 다른점
 
 - class -> className
 - for -> htmlFor
