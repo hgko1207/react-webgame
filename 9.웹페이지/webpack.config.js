@@ -23,7 +23,7 @@ module.exports = {
               "@babel/preset-env",
               {
                 targets: {
-                  browsers: ["> 5% in KR", "last 2 chrome versions"] // browserslist
+                  browsers: ["last 2 chrome versions"] // browserslist
                 },
                 debug: true
               }
