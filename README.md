@@ -48,6 +48,8 @@ npm i react-router-dom
 
 - Link
 - Route
+  - render props : 자식에게 부모 props를 전달하고 싶을 경우
+  - exact : path와 정확하게 일치하는 경우
 - Browser
   - BrowserRouter
     - 새로고침을 했을 때 페이지가 안뜸
@@ -57,6 +59,9 @@ npm i react-router-dom
     - 새로고침을 했을 때 브라우저에 물어봄
     - 관리자페이지에서 사용
 - withRouter
+- Switch
+  - 해당하는 첫 번째 페이지를 보여준다.
+  - 동시에 여러 개의 router가 보여지는 것을 막아준다.
 
 ### 사용 기술
 
@@ -84,3 +89,8 @@ npx webpack
 - Node는 자바스크립트 실행기이다. (백엔드, 서버가 아님)
 - Node에서는 require 사용
 - Hooks는 함수 컴포넌트가 전체로 재실행되는 현상이 있다.
+
+## 참고
+
+- [REACT TRAINING / REACT ROUTER](https://reacttraining.com/react-router/web/api/matchPath/returns)
+- [자그마한 리액트 팁 모음](https://react-etc.vlpt.us/)
