@@ -1,8 +1,8 @@
-import React from "react";
+import React, { memo } from "react";
 import Tr from "./Tr";
 import { useTableContext } from "./MineSearch";
 
-const Table = () => {
+const Table = memo(() => {
   const { tableData } = useTableContext();
   return (
     <table>
@@ -15,6 +15,6 @@ const Table = () => {
       </tbody>
     </table>
   );
-};
+});
 
 export default Table;
