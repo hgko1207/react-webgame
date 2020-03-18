@@ -47,7 +47,16 @@ npm i react-router-dom
 ### React Router
 
 - Link
+- Route
 - Browser
+  - BrowserRouter
+    - 새로고침을 했을 때 페이지가 안뜸
+    - 검색엔진에서 사용
+  - HashRouter
+    - Build, Delpoy시 편리함
+    - 새로고침을 했을 때 브라우저에 물어봄
+    - 관리자페이지에서 사용
+- withRouter
 
 ### 사용 기술
 
